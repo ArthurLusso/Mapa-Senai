@@ -1,0 +1,647 @@
+
+/* ========================================================
+   RESET E VARIÁVEIS BÁSICAS
+   ======================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --cor-verm-claro: #C1121F;
+    --cor-verm-escuro: #780000;
+    --cor-texto-claro: #fdf0d5;
+    --cor-texto-escuro: #333333;
+}
+
+
+/* ========================================================
+   LAYOUT MOBILE
+   ======================================================== */
+
+body {
+    background-color: #ffffff;
+}
+
+
+/* Cabeçalho */
+
+header {
+    background-color: var(--cor-verm-claro);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.btn-voltar {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* ========================================================
+   SEÇÃO HERO
+   ======================================================== */
+
+.hero {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("./imagens/biblioteca-hero.png");
+
+    background-color: #6c6c6c;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: var(--cor-texto-claro);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: 2px solid transparent;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 250px;
+    color: var(--cor-texto-claro);
+}
+
+.btn-red {
+    background-color: var(--cor-verm-claro);
+}
+
+.btn-outline {
+    background-color: var(--cor-verm-claro);
+}
+
+
+/* ========================================================
+   SEÇÃO STATS
+   ======================================================== */
+
+.stats {
+    background-color: white;
+    padding: 30px 15px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stats-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 50%;
+}
+
+.card {
+    color: var(--cor-texto-claro);
+    padding: 15px 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card-atividades {
+    background-color: var(--cor-verm-claro);
+}
+
+.card-livros {
+    background-color: var(--cor-verm-escuro);
+}
+
+.card h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 12px;
+}
+
+
+/* ========================================================
+   ÁREA DA IMAGEM E FUNDO BEGE
+   ======================================================== */
+
+.stats-img-placeholder {
+    position: relative;
+    isolation: isolate;
+
+    width: 45%;
+    height: 230px;
+
+    background: linear-gradient(
+        135deg,
+        #fdf0d5,
+        #f8e6c4
+    );
+
+    border-radius: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--cor-texto-escuro);
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(120, 0, 0, 0.04);
+}
+
+
+/* CONTORNO RETO E ALINHADO */
+
+.stats-img-placeholder::before {
+    content: "";
+
+    position: absolute;
+    z-index: 0;
+
+    inset: -9px -14px;
+
+    border: 1px solid rgba(193, 18, 31, 0.25);
+
+    border-radius: 100px;
+
+    transform: none;
+}
+
+
+/* DETALHE DECORATIVO */
+
+.stats-img-placeholder::after {
+    content: "✦";
+
+    position: absolute;
+    z-index: 3;
+
+    top: 12%;
+    right: 12%;
+
+    color: var(--cor-verm-claro);
+
+    font-size: 25px;
+}
+
+
+/* ETIQUETA */
+
+.stats-tag {
+    position: absolute;
+    z-index: 3;
+
+    left: 7%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    background-color: white;
+    color: var(--cor-verm-escuro);
+
+    padding: 9px 12px;
+
+    border-radius: 30px;
+
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+
+    white-space: nowrap;
+}
+
+
+/* IMAGEM DO ESTUDANTE */
+
+.imagem_rapaz {
+    position: relative;
+    z-index: 2;
+
+    right: 20px;
+
+    height: 230px;
+    max-width: 100%;
+
+    object-fit: contain;
+
+    filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.06));
+}
+
+
+/* ========================================================
+   SEÇÃO GALERIA
+   ======================================================== */
+
+.gallery {
+    background-color: white;
+    padding: 20px 15px 40px;
+    text-align: center;
+}
+
+.gallery-title {
+    color: var(--cor-verm-claro);
+    font-size: 24px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gallery-item {
+    margin-bottom: 30px;
+    text-align: left;
+    min-width: 0;
+}
+
+.gallery-item h3 {
+    color: var(--cor-verm-claro);
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* IMAGENS DA GALERIA */
+
+.img-box1,
+.img-box2,
+.img-box3 {
+    height: 180px;
+    width: 100%;
+
+    margin-bottom: 10px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.img-box1 {
+    background-image: url("./imagens/galeria-espaco.png");
+}
+
+.img-box2 {
+    background-image: url("./imagens/galeria-atividades.png");
+}
+
+.img-box3 {
+    background-image: url("./imagens/galeria-livros.png");
+}
+
+
+/* INDICADORES DA GALERIA */
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+
+    border: 1px solid var(--cor-verm-claro);
+    border-radius: 50%;
+
+    display: inline-block;
+}
+
+.dot.active {
+    background-color: var(--cor-verm-claro);
+}
+
+
+/* ========================================================
+   RODAPÉ
+   ======================================================== */
+
+footer {
+    background-color: var(--cor-verm-claro);
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    padding: 15px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-info {
+    padding: 20px 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 12px;
+}
+
+.footer-info-left p {
+    margin-bottom: 5px;
+}
+
+.footer-info-left strong {
+    display: block;
+    margin-bottom: 3px;
+}
+
+.footer-info-right {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* ========================================================
+   LAYOUT TABLET
+   ======================================================== */
+
+@media (min-width: 768px) {
+
+    .hero-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .stats {
+        padding: 40px 10%;
+    }
+
+    .stats-img-placeholder {
+        height: 250px;
+        border-radius: 100px;
+    }
+
+    .gallery-container {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    .gallery-item {
+        flex: 1;
+    }
+
+    .img-box1,
+    .img-box2,
+    .img-box3 {
+        height: 150px;
+        width: 100%;
+    }
+
+}
+
+
+/* ========================================================
+   LAYOUT PC / DESKTOP
+   ======================================================== */
+
+@media (min-width: 1024px) {
+
+    body {
+        height: 100vh;
+        overflow: hidden;
+        display: grid;
+        grid-template-rows: 38px 23vh 24vh minmax(0, 1fr) 14vh;
+    }
+
+    header,
+    .hero,
+    .stats,
+    .gallery,
+    footer {
+        min-height: 0;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding: 15px 15%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+        margin-bottom: 8px;
+    }
+
+    .hero p {
+        font-size: 12px;
+        line-height: 1.4;
+        margin-bottom: 14px;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 8px 25px;
+        font-size: 13px;
+    }
+
+
+    /* ESTATÍSTICAS */
+
+    .stats {
+        padding: 12px 15%;
+    }
+
+    .stats-cards {
+        width: 45%;
+        gap: 8px;
+    }
+
+    .card {
+        padding: 7px 10px;
+    }
+
+    .card h2 {
+        font-size: 14px;
+    }
+
+    .card p {
+        font-size: 10px;
+    }
+
+
+    /* FUNDO BEGE */
+
+    .stats-img-placeholder {
+        width: 42%;
+        height: 16vh;
+        min-height: 0;
+
+        border-radius: 100px;
+    }
+
+
+    /* CONTORNO RETO */
+
+    .stats-img-placeholder::before {
+        inset: -9px -14px;
+
+        border-radius: 100px;
+
+        transform: none;
+    }
+
+
+    /* IMAGEM MAIOR */
+
+    .imagem_rapaz {
+        height: 20vh;
+        max-width: 115%;
+
+        right: -25px;
+
+        object-fit: contain;
+    }
+
+
+    /* ETIQUETA */
+
+    .stats-tag {
+        left: 7%;
+        font-size: 8px;
+        padding: 9px 12px;
+    }
+
+
+    /* GALERIA */
+
+    .gallery {
+        padding: 14px 15% 16px;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+    }
+
+    .gallery-title {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .gallery-container {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        flex: 1;
+        min-height: 0;
+    }
+
+    .gallery-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+        min-height: 0;
+    }
+
+    .gallery-item h3 {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .img-box1,
+    .img-box2,
+    .img-box3 {
+        width: 100%;
+        flex: 1;
+        height: auto;
+        min-height: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .dots {
+        padding-top: 5px;
+    }
+
+
+    /* RODAPÉ */
+
+    footer {
+        padding: 0 15%;
+    }
+
+    .social-icons {
+        padding: 7px;
+    }
+
+    .footer-info {
+        padding: 10px;
+        font-size: 11px;
+    }
+
+    .footer-info-right {
+        font-size: 14px;
+    }
+
+}
+
+
+/* ========================================================
+   AJUSTES PARA CELULARES
+   ======================================================== */
+
+@media (max-width: 767px) {
+
+    .stats-tag {
+        top: auto;
+        bottom: 12px;
+
+        left: 50%;
+        transform: translateX(-50%);
+
+        font-size: 7px;
+        padding: 8px 10px;
+    }
+
+    .stats-img-placeholder::after {
+        top: 8%;
+        right: 10%;
+    }
+
+}
